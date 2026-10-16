@@ -1,0 +1,20 @@
+قائمة التسليم
+=============
+[✓] HTML5 Semantic Structure
+[✓] RTL Arabic UI
+[✓] Responsive CSS Grid/Flexbox
+[✓] Dark / Light Mode + LocalStorage
+[✓] 50 Car Dataset
+[✓] Live Search
+[✓] Brand / Condition Filters
+[✓] Sorting
+[✓] Favorites
+[✓] Compare up to 3 cars
+[✓] Add New Car + LocalStorage
+[✓] Details Modal
+[✓] Finance Calculator
+[✓] WhatsApp Integration
+[✓] Share / Clipboard
+[✓] Toast Notifications
+[✓] Sell Your Car Form
+[✓] Local Logo + Favicon

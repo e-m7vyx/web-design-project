@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معرض محمد مبروك لبيع وشراء السيارات">
+    <title>معرض محمد مبروك | بيع وشراء السيارات</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <header class="navbar">
+        <a class="brand" href="#home">
+            <img src="assets/logo.png" alt="شعار معرض محمد مبروك">
+            <span>معرض محمد مبروك</span>
+        </a>
+        <button id="menuToggle" class="icon-button menu-button" aria-label="فتح القائمة">☰</button>
+        <nav id="mainNav">
+            <a href="#home">الرئيسية</a>
+            <a href="#cars">السيارات</a>
+            <a href="#finance">التقسيط</a>
+            <a href="#sell">بيع سيارتك</a>
+        </nav>
+        <div class="nav-actions">
+            <button id="themeToggle" class="icon-button" title="تغيير المظهر">🌙</button>
+            <button id="favoritesNav" class="favorite-nav">❤️ <span id="favoriteCount">0</span></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="eyebrow">تجربة شراء سيارات مختلفة</span>
+                <h1>سيارتك القادمة <span>تبدأ من هنا</span></h1>
+                <p>اختيارات متنوعة، تفاصيل واضحة، وحساب تمويل فوري داخل الموقع.</p>
+                <div class="hero-actions">
+                    <a href="#cars" class="btn btn-primary">تصفح السيارات</a>
+                    <button id="heroAddCar" class="btn btn-outline">+ أضف سيارة</button>
+                </div>
+                <div class="stats">
+                    <div><strong id="statCars">50</strong><span>سيارة متاحة</span></div>
+                    <div><strong id="statBrands">0</strong><span>ماركة</span></div>
+                    <div><strong>24/7</strong><span>استقبال الطلبات</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cars" class="section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">اختياراتنا</span>
+                    <h2>ابحث عن سيارتك</h2>
+                </div>
+                <button id="addCarButton" class="btn btn-primary">+ إضافة سيارة جديدة</button>
+            </div>
+
+            <div class="filters">
+                <label class="search-box">🔎 <input id="searchInput" type="search" placeholder="ابحث باسم السيارة أو الماركة أو السنة..."></label>
+                <select id="brandFilter"><option value="all">كل الماركات</option></select>
+                <select id="conditionFilter">
+                    <option value="all">كل الحالات</option>
+                    <option value="جديدة">جديدة</option>
+                    <option value="مستعملة">مستعملة</option>
+                </select>
+                <select id="sortSelect">
+                    <option value="newest">الأحدث سنة</option>
+                    <option value="priceAsc">السعر: الأقل</option>
+                    <option value="priceDesc">السعر: الأعلى</option>
+                    <option value="kmAsc">الأقل ممشى</option>
+                </select>
+                <label class="check-filter"><input id="favoritesOnly" type="checkbox"> المفضلة فقط</label>
+                <button id="clearFilters" class="btn btn-muted">مسح الفلاتر</button>
+            </div>
+
+            <div id="carsGrid" class="cars-grid"></div>
+            <div id="emptyState" class="empty-state hidden">
+                <div>🚘</div><h3>لا توجد سيارات مطابقة</h3><p>جرّب تعديل البحث أو الفلاتر.</p>
+            </div>
+        </section>
+
+        <section id="finance" class="section finance-section">
+            <div class="finance-card">
+                <div>
+                    <span class="eyebrow">تمويل مرن</span>
+                    <h2>احسب القسط قبل اتخاذ قرارك</h2>
+                    <p>أدخل السعر والدفعة والمدة ونسبة المرابحة لتحصل على تقدير شهري فوري.</p>
+                </div>
+                <div class="finance-preview">
+                    <span>قسط شهري تقديري</span>
+                    <strong id="previewInstallment">0 ريال</strong>
+                    <a href="#cars" class="btn btn-primary">اختر سيارة أولاً</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sell" class="section sell-section">
+            <div class="sell-content">
+                <span class="eyebrow">نشتري سيارتك</span>
+                <h2>خلّنا نشتري سيارتك</h2>
+                <p>أرسل بيانات سيارتك وسيتواصل معك فريق المعرض عبر واتساب.</p>
+            </div>
+            <form id="sellForm" class="sell-form">
+                <input id="sellerName" required placeholder="الاسم">
+                <input id="sellerPhone" required placeholder="رقم الهاتف">
+                <input id="sellerCar" required placeholder="ماركة وموديل السيارة">
+                <input id="sellerYear" required type="number" placeholder="السنة">
+                <button class="btn btn-primary" type="submit">إرسال الطلب عبر واتساب</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            <img src="assets/logo.png" alt="شعار المعرض">
+            <div><h3>معرض محمد مبروك</h3><p>وجهتك للعثور على السيارة المناسبة بثقة ووضوح.</p></div>
+        </div>
+        <div><h4>ساعات العمل</h4><p>السبت - الخميس: 9:00 ص - 10:00 م</p><p>الجمعة: 4:00 م - 10:00 م</p></div>
+        <p class="copyright">معرض محمد مبروك لبيع وشراء السيارات © 2026 جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <div id="compareBar" class="compare-bar hidden">
+        <div><strong>المقارنة</strong> <span id="compareCount">0</span>/3</div>
+        <div class="compare-items" id="compareItems"></div>
+        <div class="compare-actions"><button id="compareNow" class="btn btn-primary">مقارنة الآن</button><button id="clearCompare" class="btn btn-muted">مسح</button></div>
+    </div>
+
+    <div id="carModal" class="modal hidden"><div class="modal-backdrop" data-close="carModal"></div><div class="modal-box large"><button class="modal-close" data-close="carModal">×</button><div id="carDetails"></div></div></div>
+    <div id="addCarModal" class="modal hidden"><div class="modal-backdrop" data-close="addCarModal"></div><div class="modal-box"><button class="modal-close" data-close="addCarModal">×</button><h2>إضافة سيارة جديدة</h2><form id="addCarForm" class="modal-form">
+        <input id="newBrand" required placeholder="الماركة">
+        <input id="newName" required placeholder="الموديل">
+        <input id="newYear" required type="number" min="1990" max="2035" placeholder="السنة">
+        <select id="newCondition"><option>جديدة</option><option>مستعملة</option></select>
+        <input id="newPrice" required type="number" min="0" placeholder="السعر">
+        <input id="newKm" required type="number" min="0" placeholder="الممشى بالكيلومتر">
+        <select id="newGear"><option>أوتوماتيك</option><option>يدوي</option></select>
+        <input id="newImage" type="url" placeholder="رابط الصورة (اختياري)">
+        <textarea id="newDesc" rows="4" placeholder="وصف السيارة"></textarea>
+        <button class="btn btn-primary" type="submit">حفظ السيارة</button>
+    </form></div></div>
+
+    <div id="compareModal" class="modal hidden"><div class="modal-backdrop" data-close="compareModal"></div><div class="modal-box xlarge"><button class="modal-close" data-close="compareModal">×</button><h2>مقارنة السيارات</h2><div id="compareTable"></div></div></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
